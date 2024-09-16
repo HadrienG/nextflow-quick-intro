@@ -1,0 +1,23 @@
+# file adapted from the carpentries nextflow training
+image: nfcore/gitpod:latest
+
+tasks:
+  - name: update
+    command: |
+      conda install -y --update-all fastp spades amrfinderplus && \
+      nextflow self-update
+  # Open training material in a side panel.
+  - name: Open training material
+    command: gp preview https://github.com/HadrienG/nextflow-quick-intro
+  # Sets up a terminal in the correct location.
+  # This must be the last task in the list
+  # - name: Terminal for training exercises
+  #   command: |
+  #     unset JAVA_TOOL_OPTIONS
+  #     mkdir -p nf-training  # Create the directory
+  #     cd nf-training        # Change into the directory
+
+vscode:
+  extensions:
+    - nextflow.nextflow # Nextflow syntax highlighting
+    - ms-vscode.live-server
