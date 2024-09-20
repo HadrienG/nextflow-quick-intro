@@ -23,4 +23,12 @@ cd nextflow-quick-intro
 
 ## On to learning!
 
-- [Introduction](01-introduction.md)
+- [Introduction](01-introduction.md)  // What is nextflow and why should i use it?
+// executing a whole pipeline
+// building a pipeline
+// modules
+
+
+TODOS
+
+fix conda in gitpod. conda init?
