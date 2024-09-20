@@ -24,3 +24,20 @@ process amrfinder {
             -o ${prefix}_amr/${prefix}_amr.tsv
         """                                 
 }
+
+/* amrfinder_build_database: build amrfinder database
+homepage: https://github.com/ncbi/amr/wiki
+
+output:
+    path: path to amrfinder database
+*/
+process amrfinder_build_database {
+    container "quay.io/biocontainers/ncbi-amrfinderplus:3.12.8--h283d18e_0"
+    output:
+        path("amrfinder_db"), emit: amrfinder_db
+    script:
+        """
+        mkdir -p amrfinder
+        amrfinder_update --threads "${task.cpus}" -d amrfinder_db
+        """
+}
