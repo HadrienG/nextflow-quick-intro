@@ -1,5 +1,7 @@
 #!/usr/bin/env nextflow
 
+
+
 process foo {
     input:
         path(reads)
